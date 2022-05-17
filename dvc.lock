@@ -1,0 +1,19 @@
+schema: '2.0'
+stages:
+  processing:
+    cmd: python src/processing.py
+    deps:
+    - path: data/raw/census.csv
+      md5: 145de00f6e6053d3f7044628f9a5b5ff
+      size: 3974474
+    - path: src/processing.py
+      md5: 304296eca56ed79dda5d89136081eae8
+      size: 1398
+    params:
+      params.yaml:
+        processing.primary_data: data/primary/cleaned_census.csv
+        processing.raw_data: data/raw/census.csv
+    outs:
+    - path: data/primary/cleaned_census.csv
+      md5: 12c208530a5680c15ae19b34152286dd
+      size: 3518606

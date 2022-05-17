@@ -1,0 +1,3 @@
+processing:
+  raw_data: data/raw/census.csv
+  primary_data: data/primary/cleaned_census.csv
