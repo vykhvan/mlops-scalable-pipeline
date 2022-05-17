@@ -9,3 +9,17 @@ stages:
     - processing.primary_data
     outs:
     - data/primary/cleaned_census.csv
+  segregation:
+    cmd: python src/segregation.py
+    deps:
+    - data/primary/cleaned_census.csv
+    - src/segregation.py
+    params:
+    - processing.primary_data
+    - segregation.train_data
+    - segregation.test_data
+    - segregation.test_size
+    - segregation.random_state
+    outs:
+    - data/model_input/train_data.csv
+    - data/model_input/test_data.csv

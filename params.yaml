@@ -1,3 +1,8 @@
 processing:
   raw_data: data/raw/census.csv
   primary_data: data/primary/cleaned_census.csv
+segregation:
+  train_data: data/model_input/train_data.csv
+  test_data: data/model_input/test_data.csv
+  test_size: 0.2
+  random_state: 24
