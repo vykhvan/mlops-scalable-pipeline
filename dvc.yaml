@@ -23,3 +23,18 @@ stages:
     outs:
     - data/model_input/train_data.csv
     - data/model_input/test_data.csv
+  train:
+    cmd: python src/train.py
+    deps:
+    - data/model_input/train_data.csv
+    - src/train.py
+    params:
+    - train.label
+    - train.categorical_features
+    - train.loss
+    - train.learning_rate
+    - train.max_depth
+    - train.random_state
+    - train.model
+    outs:
+    - data/models/census_model_v1

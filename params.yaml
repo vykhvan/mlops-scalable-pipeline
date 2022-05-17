@@ -6,3 +6,19 @@ segregation:
   test_data: data/model_input/test_data.csv
   test_size: 0.2
   random_state: 24
+train:
+  label: salary
+  categorical_features:
+    - workclass
+    - education
+    - marital-status
+    - occupation
+    - relationship
+    - race
+    - sex
+    - native-country
+  loss: log_loss
+  learning_rate: 0.1
+  max_depth: 10
+  random_state: 24
+  model: data/models/census_model_v1
