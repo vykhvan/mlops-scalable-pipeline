@@ -47,8 +47,8 @@ stages:
       md5: b24080f15b4d90855cfe7bba39391780
       size: 2814525
     - path: src/train.py
-      md5: 43bff3e6f198ce5d04c3f96c1349a125
-      size: 5030
+      md5: ceb12fdff54f40a6468984add80c149f
+      size: 4605
     params:
       params.yaml:
         train.categorical_features:
@@ -70,3 +70,25 @@ stages:
     - path: data/models/census_model_v1
       md5: b802ae8abd95922be904caf5e3d65d9c
       size: 312376
+  evaluate:
+    cmd: python src/evaluate.py
+    deps:
+    - path: data/model_input/test_data.csv
+      md5: e39c99915f182ff8b4524567ee030c03
+      size: 704235
+    - path: data/models/census_model_v1
+      md5: b802ae8abd95922be904caf5e3d65d9c
+      size: 312376
+    - path: src/evaluate.py
+      md5: 364d679b3c525839bd733404f32d4320
+      size: 3099
+    - path: src/train.py
+      md5: ceb12fdff54f40a6468984add80c149f
+      size: 4605
+    outs:
+    - path: data/reporting/metrics.json
+      md5: 08922985ee3dba7bfb299f576af9fff7
+      size: 89
+    - path: data/reporting/slice_metrics.json
+      md5: db554d67cee9e28b1b43d4e5841a35c9
+      size: 8792

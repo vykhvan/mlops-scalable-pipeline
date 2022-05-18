@@ -22,3 +22,6 @@ train:
   max_depth: 10
   random_state: 24
   model: data/models/census_model_v1
+evaluate:
+  metrics: data/reporting/metrics.json
+  slice_metrics: data/reporting/slice_metrics.json

@@ -38,3 +38,14 @@ stages:
     - train.model
     outs:
     - data/models/census_model_v1
+  evaluate:
+    cmd: python src/evaluate.py
+    deps:
+    - data/model_input/test_data.csv
+    - data/models/census_model_v1
+    - src/train.py
+    - src/evaluate.py
+    outs:
+    - data/reporting/slice_metrics.json
+    metrics:
+    - data/reporting/metrics.json
