@@ -22,14 +22,7 @@ class Pipeline:
     """
 
     def __init__(self, params):
-        """
-        Initialize object.
-
-        Inputs
-        ------
-        params : dict
-                 Dictionary with train model configuration.
-        """
+        """Initialize object."""
         logging.info("Initialize ML Pipeline with params: %s", params)
         self.categorical_features = params["categorical_features"]
         self.label = params["label"]
@@ -49,26 +42,19 @@ class Pipeline:
         used in either training or
         inference/validation.
 
-        Inputs
-        ------
-        X : pd.DataFrame
-            Dataframe containing the features and label.
-            Columns in `categorical_features`
-        categorical_features: list[str]
-            List containing the names of the categorical features (default=[])
-        label : str
-            Name of the label column in `X`. If None,
-            then an empty array will be returned
-            for y (default=None)
-        training : bool
-            Indicator if training mode or inference/validation mode.
+        Args:
+            X: Dataframe containing the features and label.
+               Columns in `categorical_features`
+            categorical_features: List containing the names of
+                                  the categorical features (default=[])
+            label: Name of the label column in `X`. If None,
+                   then an empty array will be returned
+                   for y (default=None)
+            training: Indicator if training mode or inference/validation mode.
 
-        Returns
-        -------
-        X : np.array
-            Processed data.
-        y : np.array
-            Processed labels if labeled=True, otherwise empty np.array.
+        Returns:
+            X: Processed data.
+            y: Processed labels if labeled=True, otherwise empty np.array.
         """
         if label is not None:
             y = X[label]
@@ -98,17 +84,12 @@ class Pipeline:
     def train_model(self, X, y):
         """Trains a machine learning model and returns it.
 
-        Inputs
-        ------
-        X : np.array
-            Training data.
-        y : np.array
-            Labels.
+        Args:
+            X: Training data.
+            y: Labels.
 
-        Returns
-        -------
-        model: HistGradientBoostingClassifier
-            Trained machine learning model.
+        Returns:
+            model: Trained machine learning model.
         """
         logging.info("Training model ...")
         self.model = HistGradientBoostingClassifier(
@@ -122,15 +103,11 @@ class Pipeline:
     def inference(self, X):
         """Run model inferences and return the predictions.
 
-        Inputs
-        ------
-        X : np.array
-            Data used for prediction.
+        Args:
+            X: Data used for prediction.
 
-        Returns
-        -------
-        preds : np.array
-            Predictions from the model.
+        Returns:
+            preds: Predictions from the model.
         """
 
         X, _ = self.process_data(X, self.categorical_features, training=False)
@@ -141,10 +118,8 @@ class Pipeline:
     def fit(self, X):
         """Build ML Pipeline.
 
-        Inputs
-        ------
-        X : pd.DataFrame
-            Train data.
+        Args:
+            X: Train data.
         """
         logging.info("Train step - Running")
         logging.info("Process data input shape: %s", X.shape)
