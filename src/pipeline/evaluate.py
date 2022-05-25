@@ -8,7 +8,6 @@ import joblib
 import pandas as pd
 import yaml
 from sklearn.metrics import fbeta_score, precision_score, recall_score
-
 from train import Pipeline  # noqa F401
 
 logging.basicConfig(
