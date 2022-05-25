@@ -2,7 +2,7 @@ from pathlib import Path
 
 import pandas as pd
 
-from src.pipeline.processing import remove_spaces
+from src.processing import remove_spaces
 
 RAW_DATA = """
 col1, col2,col3 , col4, col5
