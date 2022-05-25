@@ -9,7 +9,7 @@ import pandas as pd
 import yaml
 from sklearn.metrics import fbeta_score, precision_score, recall_score
 
-from train import Pipeline # noqa F401
+from train import Pipeline  # noqa F401
 
 logging.basicConfig(
     level=logging.INFO, format="%(asctime)-15s - %(levelname)s - %(message)s"
