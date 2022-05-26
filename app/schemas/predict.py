@@ -3,8 +3,8 @@ from typing import Any, List, Optional
 from pydantic import BaseModel
 
 
-class Inference(BaseModel):
-    """Result of model inference"""
+class Prediction(BaseModel):
+    """Result of model prediction"""
 
     errors: Optional[Any]
     version: str
@@ -45,15 +45,15 @@ class MultiplePerson(BaseModel):
                         "fnlgt": 77516,
                         "education": "Bachelors",
                         "education-num": 13,
-                        "marital-status": "Never-married",
+                        "marital_status": "Never-married",
                         "occupation": "Adm-clerical",
                         "relationship": "Not-in-family",
                         "race": "White",
                         "sex": "Male",
-                        "capital-gain": 2174,
-                        "capital-loss": 0,
-                        "hours-per-week": 40,
-                        "native-country": "United-States",
+                        "capital_gain": 2174,
+                        "capital_loss": 0,
+                        "hours_per_week": 40,
+                        "native_country": "United-States",
                     }
                 ]
             }
