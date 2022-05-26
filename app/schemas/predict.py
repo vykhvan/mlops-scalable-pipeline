@@ -44,7 +44,7 @@ class MultiplePerson(BaseModel):
                         "workclass": "State-gov",
                         "fnlgt": 77516,
                         "education": "Bachelors",
-                        "education-num": 13,
+                        "education_num": 13,
                         "marital_status": "Never-married",
                         "occupation": "Adm-clerical",
                         "relationship": "Not-in-family",
