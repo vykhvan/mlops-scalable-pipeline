@@ -1,18 +1,11 @@
-from typing import Any, List, Optional
+"""Schemas for API responses."""
+from typing import List, Optional
 
 from pydantic import BaseModel
 
 
-class Prediction(BaseModel):
-    """Result of model prediction"""
-
-    errors: Optional[Any]
-    version: str
-    predictions: Optional[List[int]]
-
-
 class Person(BaseModel):
-    """Input model data schema"""
+    """Person data model"""
 
     age: Optional[int]
     workclass: Optional[str]
@@ -30,8 +23,8 @@ class Person(BaseModel):
     native_country: Optional[str]
 
 
-class MultiplePerson(BaseModel):
-    """Input model multiple data schema"""
+class Persons(BaseModel):
+    """Persons data model"""
 
     persons: List[Person]
 
