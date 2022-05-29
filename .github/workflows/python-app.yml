@@ -41,12 +41,12 @@ jobs:
   
       - name: Lint with flake8
         run: |
-          flake8 --max-line-length 90 src/ app/
+          flake8 --max-line-length 90
           
       - name: Check sorted import packages
         run: |
-          isort --profile black --check-only src/ app/
+          isort --profile black --check-only .
           
       - name: Test with pytest
         run: |
-          pytest -vv tests/
+          pytest -vv
