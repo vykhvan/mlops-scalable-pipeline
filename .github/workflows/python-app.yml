@@ -41,11 +41,11 @@ jobs:
   
       - name: Lint with flake8
         run: |
-          flake8 --max-line-length 90
+          flake8 --max-line-length 90 src api main.py
           
       - name: Check sorted import packages
         run: |
-          isort --profile black --check-only .
+          isort --profile black --check-only src api main.py
           
       - name: Test with pytest
         run: |
