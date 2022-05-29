@@ -1,7 +1,18 @@
-"""Schemas for API responses."""
-from typing import List, Optional
+from typing import Any, List, Optional
 
 from pydantic import BaseModel
+
+
+class Health(BaseModel):
+    name: str
+    api_version: str
+    model_version: str
+
+
+class Prediction(BaseModel):
+    errors: Optional[Any]
+    version: str
+    predictions: Optional[List[float]]
 
 
 class Person(BaseModel):
